@@ -354,7 +354,7 @@ export const projects = [
     tech: ['React', 'Vite', 'JavaScript', 'OpenAI API', 'LocalStorage'],
     image: '/images/ai-todo.png',
     github: 'https://github.com/aqsak-dev99/Ai-to-do-app',
-    live: 'https://aqsak-dev99.github.io/Ai-to-do-app/',
+    live: 'https://ai-todo-app-peach.vercel.app',
     category: ['AI'],
     featured: true,
     caseStudy: {
