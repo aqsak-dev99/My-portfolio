@@ -89,16 +89,11 @@
 
 .about-skills__group li {
   display: flex;
-  justify-content: space-between;
   font-size: 14px;
   color: var(--bone-dim);
   border-bottom: 1px solid var(--void-3);
   padding-bottom: 12px;
-}
-
-.about-skills__level {
-  font-size: 10.5px;
-  color: var(--steel);
+  line-height: 1.55;
 }
 
 .about-certs__title {

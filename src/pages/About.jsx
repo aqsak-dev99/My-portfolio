@@ -17,6 +17,10 @@ const CATEGORY_LABELS = {
   aiAutomation: 'AI & Automation',
   uiux: 'UI/UX',
   tools: 'Tools',
+  databases: 'Databases',
+  devOps: 'DevOps and deployment',
+  design: 'Design and UI/UX',
+  dataAutomation: 'Data and automation',
 };
 
 export default function About({ reducedMotion }) {
@@ -45,8 +49,6 @@ export default function About({ reducedMotion }) {
         <div className="container about-story__grid">
           <div className="about-story__head">
             <span className="eyebrow reveal">About</span>
-            <h1 className="about-story__title reveal">The Story</h1>
-            <p className="about-story__subtitle mono reveal">{site.name}&apos;s Narrative</p>
           </div>
           <div className="about-story__body">
             <p className="about-story__lede reveal">I’m driven by curiosity and the process of turning ideas into something real. I enjoy exploring how technology works beneath the surface, solving problems, and constantly pushing myself to build something better than the last.</p>
@@ -62,16 +64,14 @@ export default function About({ reducedMotion }) {
         <div className="container">
           <span className="eyebrow reveal">Skill set</span>
           <h2 className="about-skills__title reveal">What I work with</h2>
+          <p className="about-skills__intro reveal">Technical Knowledge &amp; Practical Exposure – technologies I have gained familiarity with through learning and hands-on practice.</p>
           <div className="about-skills__grid">
-            {Object.entries(site.categorizedSkills).map(([key, items]) => (
+            {Object.entries(site.detailedSkills).map(([key, items]) => (
               <div key={key} className="about-skills__group reveal">
                 <h3 className="mono">{CATEGORY_LABELS[key] || key}</h3>
                 <ul>
-                  {items.map((s) => (
-                    <li key={s.name}>
-                      <span>{s.name}</span>
-                      <span className="mono about-skills__level">{s.level}</span>
-                    </li>
+                  {items.map((item) => (
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>

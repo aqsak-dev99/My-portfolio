@@ -1,45 +1,39 @@
 // Source of truth for all real content on the site.
-// Transcribed directly from the provided siteData.js / project.js.
-// Only additions: `category` (for the Projects filter UI) and `featured`
-// (which projects appear in the orbital showcase on Home). No project
-// content, copy, links, or fields have been invented or removed.
+// AutoHub, MyFitness and LeaseFlow are the featured flagship projects and
+// match the CV. Add screenshots to /public/images and set `image` /
+// `caseStudy.screenshots` for them when ready.
 
 export const skills = [
-  'React.js', 'Node.js', 'JavaScript/ES6+', 'MySQL/MongoDB', 'RESTful API Development',
-  'Python Automation', 'AI Integration', 'Responsive Design', 'Full-Stack Development',
-  'UI/UX Implementation', 'Git/Version Control', 'Cloud Deployment'
+  'Java / Spring Boot', 'Spring AI', 'Python / FastAPI / Django', 'React.js', 'Node.js',
+  'PostgreSQL / pgvector', 'LangGraph Multi-Agent Systems', 'RAG', 'MCP', 'LLM Evaluation',
+  'n8n Automation', 'RESTful APIs', 'CI/CD', 'UI/UX Implementation', 'Cloud Deployment'
 ];
 
 export const categorizedSkills = {
   frontend: [
     { name: 'React.js', level: 'Advanced', icon: '⚛️' },
-    { name: 'JavaScript/ES6+', level: 'Advanced', icon: '📜' },
-    { name: 'HTML5', level: 'Advanced', icon: '🌐' },
-    { name: 'CSS3 / Tailwind', level: 'Advanced', icon: '🎨' },
-    { name: 'Responsive Design', level: 'Advanced', icon: '📱' },
+    { name: 'HTML', level: 'Advanced', icon: '🌐' },
+    { name: 'CSS', level: 'Advanced', icon: '🎨' },
   ],
   backend: [
+    { name: 'Java / Spring Boot', level: 'Intermediate', icon: '☕' },
+    { name: 'FastAPI', level: 'Intermediate', icon: '⚡' },
+    { name: 'Django', level: 'Intermediate', icon: '🐍' },
     { name: 'Node.js', level: 'Advanced', icon: '🟢' },
-    { name: 'Express.js', level: 'Advanced', icon: '🚀' },
-    { name: 'MySQL', level: 'Intermediate', icon: '🗄️' },
-    { name: 'MongoDB', level: 'Intermediate', icon: '🍃' },
-    { name: 'RESTful APIs', level: 'Advanced', icon: '🔗' },
+    { name: 'PostgreSQL / pgvector', level: 'Intermediate', icon: '🐘' },
+    { name: 'RESTful APIs / Swagger', level: 'Advanced', icon: '🔗' },
   ],
   aiAutomation: [
-    { name: 'Python Automation', level: 'Advanced', icon: '🐍' },
-    { name: 'AI Integration', level: 'Intermediate', icon: '🤖' },
-    { name: 'Scripting', level: 'Advanced', icon: '⚡' },
+    { name: 'Spring AI Tool-Calling', level: 'Intermediate', icon: '🤖' },
+    { name: 'LangGraph Multi-Agent', level: 'Intermediate', icon: '🕸️' },
+    { name: 'RAG', level: 'Intermediate', icon: '📚' },
   ],
   uiux: [
     { name: 'Figma', level: 'Intermediate', icon: '🎯' },
-    { name: 'UI/UX Implementation', level: 'Advanced', icon: '✨' },
-    { name: 'Design Systems', level: 'Intermediate', icon: '📐' },
   ],
   tools: [
     { name: 'Git / GitHub', level: 'Advanced', icon: '🔧' },
-    { name: 'Docker', level: 'Intermediate', icon: '🐳' },
-    { name: 'Cloud Deployment', level: 'Intermediate', icon: '☁️' },
-    { name: 'Vercel / Railway', level: 'Advanced', icon: '🚂' },
+    { name: 'CI/CD', level: 'Intermediate', icon: '✅' },
   ]
 };
 
@@ -64,7 +58,296 @@ export const services = [
   },
 ];
 
+export const detailedSkills = {
+  backend: [
+    'Spring Boot (MyFitness)',
+    'FastAPI (AutoHub)',
+    'Django (LeaseFlow)',
+    'Node.js and Express (Diana’s Jewelry)',
+    'Serverless API functions on Vercel (flowpath contact form, admin, assistant)',
+    'REST API design, documented with Swagger/OpenAPI (MyFitness)',
+    'Login with sessions, spam honeypot and rate limiting (flowpath)',
+  ],
+  aiAutomation: [
+    'Spring AI with tool-calling agents (MyFitness)',
+    'LangGraph supervisor-worker multi-agent system with a verifier agent (LeaseFlow)',
+    'RAG with pgvector (MyFitness, LeaseFlow)',
+    'MCP tools (LeaseFlow)',
+    'LLM evaluation (MyFitness harness, LeaseFlow suite, flowpath’s 29/29 set)',
+    'Red-team testing, plus cost and token tracking (LeaseFlow)',
+    'Multilingual AI with human-in-the-loop handover (AutoHub)',
+    'Grounded answers from live data (Diana’s assistant reads the product catalogue)',
+    'Working with several LLM providers: OpenAI, Gemini and Groq, including switching providers, fallback models, retries and timeouts (Diana’s Jewelry)',
+    'n8n workflow automation (AutoHub)',
+  ],
+  databases: [
+    'PostgreSQL with pgvector, hosted on Neon (MyFitness, flowpath)',
+    'MySQL, hosted on Aiven with SSL (Diana’s Jewelry)',
+    'Redis (AutoHub)',
+    'Migrating a database and restoring from a SQL dump (Diana’s Jewelry)',
+  ],
+  devOps: [
+    'Git and GitHub, including resolving pull and push problems',
+    'CI/CD (MyFitness), GitHub Actions (Email Generator)',
+    'Docker (Email Generator)',
+    'Render, Vercel, Railway, Aiven and Neon',
+    'Environment variables and secrets management',
+    'GitHub Codespaces (AutoHub)',
+    'Debugging live deployments using server logs',
+  ],
+  design: [
+    'Figma: wireframes, prototypes and design systems (ClassLink, design system prototype)',
+    'User personas, task flows and usability heuristics (ClassLink)',
+    'Landing pages and brand sites (Gulmohar, MicroVisuals, PixelPulse, flowpath)',
+  ],
+  dataAutomation: [
+    'Pandas (CSV Cleaner)',
+    'Python and Node automation scripts (File Organizer, Email Generator)',
+  ],
+};
+
 export const projects = [
+  // --- Featured: the three flagship full-stack + AI projects (match the CV) ---
+  {
+    id: 'autohub',
+    title: 'AutoHub – AI Receptionist & Lead Automation Hub',
+    description: 'An AI receptionist for a digital marketing agency that answers leads in English, Roman Urdu, Urdu and Arabic, logs how every lead was handled, and hands over to a human when unsure.',
+    tech: ['FastAPI', 'PostgreSQL', 'Redis', 'n8n', 'React'],
+    image: '/images/Screenshot 2026-11-05 at 12.18.22 PM.png',
+    github: null,
+    live: null,
+    category: ['AI', 'Full-Stack'],
+    featured: true,
+    meta: {
+      role: 'Full-Stack & AI Engineer',
+      type: 'AI Automation Platform'
+    },
+    caseStudy: {
+      overview: 'AutoHub is an automation hub built for flowpath, a digital marketing agency. Its core automation is an AI receptionist that replies to incoming leads in the language they write in, records how each conversation was handled on a dashboard, and escalates to a human team member whenever the AI is not confident.',
+      problem: 'Agency leads arrive in several languages, including Roman Urdu, Urdu and Arabic, and need a fast first reply. Fully automated replies risk giving wrong answers, while handling every message manually is slow.',
+      solution: 'I built a FastAPI backend with PostgreSQL and Redis, orchestrated the automation workflows in n8n, and added a React dashboard so the agency can see exactly how each lead was handled. A human-in-the-loop step means the AI asks for help instead of guessing.',
+      keyFeatures: {
+        ai: [
+          'Multilingual lead replies: English, Roman Urdu, Urdu and Arabic',
+          'Human-in-the-loop escalation when the AI is unsure',
+        ],
+        automation: [
+          'Automation workflows orchestrated in n8n',
+          'FastAPI backend with PostgreSQL and Redis',
+        ],
+        dashboard: [
+          'React dashboard showing how every lead was handled',
+          'Full visibility of automated conversations for the agency team',
+        ],
+      },
+      techStack: ['FastAPI', 'Python', 'PostgreSQL', 'Redis', 'n8n', 'React', 'GitHub Codespaces'],
+      screenshots: [
+        '/images/Screenshot 2026-11-05 at 12.18.02 PM.png',
+        '/images/Screenshot 2026-11-05 at 12.18.11 PM.png',
+        '/images/Screenshot 2026-11-05 at 12.18.22 PM.png',
+        '/images/Screenshot 2026-11-05 at 12.18.34 PM.png',
+        '/images/Screenshot 2026-11-05 at 12.18.39 PM.png',
+        '/images/Screenshot 2026-11-05 at 12.19.12 PM.png'
+      ]
+    }
+  },
+  {
+    id: 'myfitness',
+    title: 'MyFitness – Gym Management System with Spring AI Agent',
+    description: 'A full-stack gym management system with a tool-calling AI agent built on Spring AI, grounded with RAG over PostgreSQL + pgvector, and deployed live with demo accounts.',
+    tech: ['Java', 'Spring Boot', 'Spring AI', 'PostgreSQL', 'pgvector', 'React'],
+    image: '/images/myfitness2.png',
+    github: null,
+    live: 'https://myfitness-frontend.onrender.com',
+    category: ['AI', 'Full-Stack'],
+    featured: true,
+    meta: {
+      role: 'Full-Stack & AI Engineer',
+      type: 'Full-Stack Web App + AI Agent'
+    },
+    caseStudy: {
+      overview: 'MyFitness started as a Java OOP gym management system and grew into a full-stack Spring Boot application with an AI agent. The agent uses Spring AI tool-calling to act on gym data, and Retrieval-Augmented Generation (RAG) keeps its answers grounded in that data.',
+      problem: 'A gym system holds useful information about members and the gym, but getting answers out of it means clicking through screens. An AI assistant can help, but only if its answers are grounded in real data and its behaviour can be tested.',
+      solution: 'I rebuilt the system on Spring Boot, added a Spring AI agent with tool-calling, and implemented RAG with PostgreSQL and the pgvector extension. An evaluation harness tests the agent, a CI/CD pipeline checks every change, and the REST API is documented with Swagger/OpenAPI.',
+      keyFeatures: {
+        ai: [
+          'Spring AI agent with tool-calling',
+          'RAG over PostgreSQL with pgvector',
+          'Evaluation harness for agent behaviour',
+        ],
+        backend: [
+          'Spring Boot REST API documented with Swagger/OpenAPI',
+          'CI/CD pipeline',
+          'Neon Postgres database',
+        ],
+        deployment: [
+          'Frontend and API deployed separately on Render',
+          'Demo admin and member accounts for reviewers',
+        ],
+      },
+      techStack: ['Java', 'Spring Boot', 'Spring AI', 'PostgreSQL', 'pgvector', 'Neon', 'React', 'Swagger/OpenAPI', 'CI/CD', 'Render'],
+      screenshots: [
+        '/images/myfitness1.png',
+        '/images/myfitness2.png',
+        '/images/myfitness3.png',
+        '/images/myfitness4.png',
+        '/images/myfitness5.png'
+      ]
+    }
+  },
+  {
+    id: 'leaseflow',
+    title: 'LeaseFlow – Multi-Agent Rental Management System',
+    description: 'A LangGraph supervisor-worker system where specialist agents handle leases, maintenance and payments, with a verifier agent, RAG, MCP tools, cost tracking and red-team testing.',
+    tech: ['Python', 'Django', 'LangGraph', 'RAG', 'MCP'],
+    image: '/images/lf4.png',
+    github: 'https://github.com/aqsak-dev99/leaseflow',
+    live: null,
+    category: ['AI', 'Full-Stack'],
+    featured: true,
+    meta: {
+      role: 'AI Engineer',
+      type: 'Multi-Agent LLM System'
+    },
+    caseStudy: {
+      overview: 'LeaseFlow is a rental management system built around a multi-agent architecture. A supervisor agent reads each request and routes it to a specialist agent for leases, maintenance or payments, and a verifier agent checks the result before it is returned.',
+      problem: 'Rental management covers very different tasks: lease questions, maintenance requests and payments. A single general-purpose LLM prompt handles all of these poorly and is hard to test, control or trust.',
+      solution: 'I used a LangGraph supervisor-worker design so each agent has one job, grounded the agents with RAG, connected external tools through the Model Context Protocol (MCP), and added cost and token tracking for every run. An evaluation suite and red-team tests check how the system behaves with normal, adversarial and out-of-scope inputs.',
+      keyFeatures: {
+        agents: [
+          'Supervisor agent routing to lease, maintenance and payment agents',
+          'Verifier agent that checks outputs before responding',
+        ],
+        grounding: [
+          'Retrieval-Augmented Generation (RAG)',
+          'Tools integrated through the Model Context Protocol (MCP)',
+        ],
+        quality: [
+          'LLM evaluation suite',
+          'Red-team testing against adversarial inputs',
+          'Cost and token tracking per agent run',
+        ],
+      },
+      techStack: ['Python', 'Django', 'LangGraph', 'RAG', 'MCP', 'LLM Evaluation'],
+      screenshots: [
+        '/images/lf3.png',
+        '/images/lf4.png',
+        '/images/lf5.jpg',
+        '/images/lf7.jpg',
+        '/images/lf9.jpg'
+      ]
+    }
+  },
+
+  // --- Web design & frontend work (concept sites; business names and content are placeholders) ---
+  {
+    id: 'flowpath',
+    title: 'flowpath – Digital Marketing Studio Website',
+    description: 'A multi-page agency website with a backend and a grounded AI assistant that answers visitor questions and captures leads.',
+    tech: ['React', 'Vite', 'Neon Postgres', 'Groq', 'Vercel'],
+    image: '/images/flowpath-hero.jpg',
+    github: null,
+    live: 'https://flowpath-sigma.vercel.app',
+    category: ['UI/UX', 'Full-Stack', 'AI'],
+    featured: false,
+    caseStudy: {
+      overview: 'flowpath is a concept website for a digital marketing studio. It started as a design and frontend project and grew into a full-stack site with a backend, an admin page and an AI assistant. It is also the agency that AutoHub, my AI receptionist project, is built for.',
+      keyFeatures: {
+        design: [
+          'Multi-page agency site with a consistent visual identity',
+          'Responsive layout for desktop and mobile',
+          'Animated channel diagram, data-style service cards and a case study with a revenue chart',
+          'Floating "Ask flowpath" assistant available on every page',
+        ],
+        backend: [
+          'Contact form and admin page backed by Neon Postgres',
+        ],
+        ai: [
+          'AI assistant with grounded answers and polite refusals for off-topic questions',
+          'Lead capture and rate limits',
+          'Evaluation set of 29 test cases, all passing against the live model',
+        ],
+      },
+      techStack: ['React', 'Vite', 'Neon Postgres', 'Groq (gpt-oss-120b)', 'Vercel'],
+      screenshots: [
+        '/images/flowpath-hero.jpg',
+        '/images/flowpath-channels.jpg',
+        '/images/flowpath-services.jpg',
+        '/images/flowpath-case-study.jpg',
+        '/images/flowpath-work.jpg',
+        '/images/flowpath-remembered.jpg',
+        '/images/flowpath-contact.jpg'
+      ]
+    }
+  },
+  {
+    id: 'gulmohar',
+    title: 'Gulmohar – Café Website',
+    description: 'A warm, mobile-first website for a courtyard café in Lahore, with a menu, live opening hours and table reservations.',
+    tech: ['Responsive Design', 'Accessibility', 'SEO', 'Vercel'],
+    image: '/images/gulmohar-hero.jpg',
+    github: null,
+    live: 'https://gulmohar-site.vercel.app',
+    category: ['UI/UX'],
+    featured: false,
+    caseStudy: {
+      overview: 'Gulmohar is a concept website for a courtyard café in Gulberg, Lahore. The design focuses on a calm, nature-inspired feel, with clear calls to action so visitors can check the menu, see whether the café is open and book a table in a few taps.',
+      keyFeatures: {
+        visitors: [
+          'Menu with prices in rupees and featured drinks and bakes',
+          'Opening status shown live on the page',
+          'Hours, location, map link and parking notes',
+          'FAQ covering reservations, Wi-Fi, payment and delivery',
+        ],
+        bookings: [
+          'Table reservation form with date, time, guest count and seating preference',
+          'Private events section with an illustrated courtyard layout and WhatsApp enquiries',
+        ],
+        quality: [
+          'Light and dark mode toggle',
+          'Hand-drawn flame tree illustration and a weekend promotion banner',
+          'Mobile-first layout',
+          'Skip-to-content link for accessibility',
+          'SEO and social-sharing meta tags',
+        ],
+      },
+      techStack: ['Responsive Design', 'Accessibility', 'SEO', 'Vercel'],
+      screenshots: [
+        '/images/gulmohar-hero.jpg',
+        '/images/gulmohar-events.jpg',
+        '/images/gulmohar-hours.jpg'
+      ]
+    }
+  },
+  {
+    id: 'microvisuals',
+    title: 'MicroVisuals – AI Image Tool Landing Page',
+    description: 'A landing page for an AI tool that turns written descriptions into images.',
+    tech: ['Landing Page Design', 'Responsive Design', 'Vercel'],
+    image: '/images/microvisuals-hero.jpg',
+    github: null,
+    live: 'https://microvisuals-livid.vercel.app',
+    category: ['UI/UX'],
+    featured: false,
+    caseStudy: {
+      overview: 'MicroVisuals is a concept landing page for an AI image tool, built around the idea of "describe it, see it". The goal was to explain an AI product visually and make visitors want to try it.',
+      keyFeatures: [
+        'Full-screen hero with large editorial typography over a background film',
+        'Interactive style picker (Natural, Noir and more) that restyles both the preview image and the background film',
+        'Gallery and Styles sections to show what the tool can create',
+        '"Notes from the studio" blog section with dated articles',
+        'Floating pill navigation with a "Get in touch" call to action'
+      ],
+      techStack: ['Landing Page Design', 'Responsive Design', 'Vercel'],
+      screenshots: [
+        '/images/microvisuals-hero.jpg',
+        '/images/microvisuals-styles.jpg',
+        '/images/microvisuals-blog.jpg'
+      ]
+    }
+  },
+
+  // --- Earlier projects ---
   {
     id: '1',
     title: 'AI Todo – Dual AI Mode Task Manager',
@@ -73,7 +356,7 @@ export const projects = [
     image: '/images/ai-todo.png',
     github: 'https://github.com/aqsak-dev99/Ai-to-do-app',
     live: 'https://aqsak-dev99.github.io/Ai-to-do-app/',
-    category: ['Full-Stack', 'AI'],
+    category: ['AI'],
     featured: true,
     caseStudy: {
       overview: 'AI Todo is a modern task management application that combines intelligent AI assistance with intuitive UI/UX and gamification elements. Built with React + Vite, it features two operational modes: Demo Mode (no API key required with rule-based suggestions) and Live AI Mode (powered by OpenAI for contextual task recommendations).',
@@ -142,7 +425,7 @@ export const projects = [
     tech: ['Node.js', 'Express', 'MySQL', 'jQuery', 'HTML', 'CSS'],
     image: '/images/dianas-jewelry.png',
     github: 'https://github.com/aqsak-dev99/dianas-jewelry',
-    live: 'https://dianas-jewelry-production.up.railway.app/index.html',
+    live: 'https://dianas-jewelry.onrender.com',
     category: ['Full-Stack', 'AI'],
     featured: true,
     meta: {
@@ -178,7 +461,7 @@ export const projects = [
     image: '/images/pixelpulse-media.png',
     github: 'https://github.com/aqsak-dev99/pixel_media',
     live: 'https://aqsak-dev99.github.io/pixel_media/',
-    category: ['Full-Stack', 'UI/UX'],
+    category: ['UI/UX'],
     featured: true,
     caseStudy: {
       overview: 'A visually stunning digital agency website with modern glassmorphism design.',
@@ -209,7 +492,7 @@ export const projects = [
     image: '/images/wanderlust-journeys.png',
     github: 'https://github.com/aqsak-dev99/aqsa-web-design',
     live: 'https://aqsak-dev99.github.io/aqsa-web-design/',
-    category: ['Full-Stack'],
+    category: ['UI/UX'],
     featured: false,
     caseStudy: {
       overview: 'A beautiful travel landing page showcasing destinations and inspiring wanderlust.',
@@ -229,77 +512,6 @@ export const projects = [
       ],
       learnings: 'Gained expertise in Bootstrap 5 and responsive design patterns.',
       screenshots: []
-    }
-  },
-  {
-    id: '5',
-    title: 'AI Designing & Automation Suite',
-    description: 'AI-powered design tools and automation workflows for creative professionals.',
-    tech: ['React', 'Node.js', 'Python', 'AI/ML', 'Automation'],
-    image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=AI%20design%20studio%20interface%20dashboard&image_size=landscape_16_9',
-    github: 'https://github.com/aqsak-dev99',
-    live: null,
-    category: ['AI', 'Full-Stack'],
-    featured: true,
-    caseStudy: {
-      overview: 'A comprehensive suite of AI-powered design tools and automation scripts.',
-      problem: 'Creative professionals spend too much time on repetitive tasks.',
-      solution: 'Built AI design tools and automation workflows to streamline creative processes.',
-      techStack: ['React', 'Node.js', 'Python', 'AI/ML'],
-      keyFeatures: [
-        'AI-powered design suggestions',
-        'Automated workflow management',
-        'AI Todo app integration',
-        'Batch processing capabilities',
-        'Intuitive, modern interfaces'
-      ],
-      challenges: [
-        'Integrating AI models with web applications',
-        'Creating reliable automation workflows',
-        'Ensuring smooth user experience with AI features'
-      ],
-      learnings: 'Deepened knowledge of AI integration, automation patterns, and modern UI/UX.',
-      screenshots: [
-        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=AI%20design%20tool%20interface&image_size=landscape_16_9',
-        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=automation%20workflow%20dashboard%20UI&image_size=landscape_16_9',
-        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=AI%20todo%20app%20interface&image_size=landscape_16_9'
-      ]
-    }
-  },
-  {
-    id: '6',
-    title: 'UI/UX Design System – Figma Prototype',
-    description: 'Comprehensive UI/UX design system and prototype built in Figma.',
-    tech: ['Figma', 'UI/UX Design', 'Design Systems', 'Prototyping'],
-    image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Figma%20design%20system%20UI%20components&image_size=landscape_16_9',
-    github: null,
-    live: 'https://www.figma.com/proto/Wfm9AIz9A3JNOEPVgm0iyH/Untitled?node-id=92-331&p=f&t=QMRlVCzUel8QQXyK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=92%3A331',
-    figma: 'https://www.figma.com/proto/Wfm9AIz9A3JNOEPVgm0iyH/Untitled?node-id=92-331&p=f&t=QMRlVCzUel8QQXyK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=92%3A331',
-    category: ['UI/UX'],
-    featured: true,
-    caseStudy: {
-      overview: 'A complete UI/UX design system with reusable components and interactive prototypes.',
-      problem: 'Need for consistent, scalable design components across multiple projects.',
-      solution: 'Created a comprehensive Figma design system with wireframes, high-fidelity designs, and user flows.',
-      techStack: ['Figma', 'Design Systems', 'Prototyping', 'User Research'],
-      keyFeatures: [
-        'Reusable component library',
-        'Wireframes and low-fidelity designs',
-        'High-fidelity interactive prototypes',
-        'Complete user flow documentation',
-        'Design tokens and style guide'
-      ],
-      challenges: [
-        'Creating scalable, reusable components',
-        'Ensuring consistency across all design elements',
-        'Documenting the design system thoroughly'
-      ],
-      learnings: 'Mastered Figma, design systems, and the complete UI/UX process from research to prototyping.',
-      screenshots: [
-        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Figma%20wireframe%20design%20mobile%20app&image_size=landscape_16_9',
-        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=high%20fidelity%20UI%20design%20dashboard&image_size=landscape_16_9',
-        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=user%20flow%20diagram%20UX%20design&image_size=landscape_16_9'
-      ]
     }
   },
   {
@@ -389,17 +601,17 @@ export const projects = [
     id: '7',
     title: 'Product Survey Form',
     description: 'Responsive, interactive survey form with validation, counters, and glassmorphism.',
-    tech: ['HTML5', 'CSS3', 'JavaScript'],
+    tech: ['HTML', 'CSS'],
     image: '/images/product-survey-form.png',
     github: 'https://github.com/aqsak-dev99/ProductSurvey',
     live: 'https://aqsak-dev99.github.io/ProductSurvey/',
-    category: ['Full-Stack', 'UI/UX'],
+    category: ['UI/UX'],
     featured: false,
     caseStudy: {
       overview: 'A beautiful, accessible survey form with modern design.',
       problem: 'Need for a professional, accessible survey form with great UX.',
       solution: 'Built a responsive form with real-time validation and glassmorphic design.',
-      techStack: ['HTML5', 'CSS3', 'JavaScript'],
+      techStack: ['HTML', 'CSS'],
       keyFeatures: [
         'Real-time validation and counters',
         'Keyboard accessibility',
@@ -424,7 +636,7 @@ export const projects = [
     image: '/images/3.jpg',
     github: 'https://github.com/aqsak-dev99/Csv-cleaner',
     live: 'https://github.com/aqsak-dev99/Csv-cleaner',
-    category: ['Full-Stack'],
+    category: [],
     featured: false,
     caseStudy: {
       overview: 'A Python script that automates CSV file cleaning and standardization.',
@@ -455,7 +667,7 @@ export const projects = [
     image: '/images/2.jpg',
     github: 'https://github.com/aqsak-dev99/file_organizer',
     live: 'https://github.com/aqsak-dev99/file_organizer',
-    category: ['Full-Stack'],
+    category: [],
     featured: false,
     caseStudy: {
       overview: 'A Node.js script that automatically organizes files into folders by type.',
@@ -485,7 +697,7 @@ export const projects = [
     image: '/images/1.jpg',
     github: 'https://github.com/aqsak-dev99/Email_generator',
     live: 'https://github.com/aqsak-dev99/Email_generator',
-    category: ['Full-Stack'],
+    category: [],
     featured: false,
     caseStudy: {
       overview: 'A tool that generates professional emails from templates.',
@@ -506,95 +718,21 @@ export const projects = [
       screenshots: []
     }
   },
-
-  // --- In-progress / planned work. No case-study content exists for these
-  // yet, so only the title (as given) plus honest placeholders — no
-  // invented tech, links, or outcomes. Update in place once real details
-  // and screenshots are ready.
-  {
-    id: '12',
-    title: 'Agent Observability & Tracing Dashboard',
-    description: 'A dashboard for observability and tracing across AI agent workflows. Case study coming soon.',
-    tech: ['TBD'],
-    image: null,
-    github: null,
-    live: null,
-    category: ['AI'],
-    featured: false,
-    caseStudy: {
-      overview: 'Full case study coming soon.',
-    }
-  },
-  {
-    id: '13',
-    title: 'Multi-Agent Rental/Lease Assistant',
-    description: 'A multi-agent assistant for rental and lease workflows. Case study coming soon.',
-    tech: ['TBD'],
-    image: null,
-    github: null,
-    live: null,
-    category: ['AI', 'Full-Stack'],
-    featured: false,
-    caseStudy: {
-      overview: 'Full case study coming soon.',
-    }
-  },
-  {
-    id: '14',
-    title: 'Reusable Evaluation Harness',
-    description: 'A reusable evaluation harness for testing and benchmarking AI systems. Case study coming soon.',
-    tech: ['TBD'],
-    image: null,
-    github: null,
-    live: null,
-    category: ['AI'],
-    featured: false,
-    caseStudy: {
-      overview: 'Full case study coming soon.',
-    }
-  },
-  {
-    id: '15',
-    title: 'AI Usage/Cost Monitoring Agent',
-    description: 'An agent for monitoring AI usage and cost across projects. Case study coming soon.',
-    tech: ['TBD'],
-    image: null,
-    github: null,
-    live: null,
-    category: ['AI'],
-    featured: false,
-    caseStudy: {
-      overview: 'Full case study coming soon.',
-    }
-  },
-  {
-    id: '16',
-    title: 'MyFitness Management System — Tool-calling Spring AI Agent',
-    description: 'A gym management system being upgraded with a tool-calling Spring AI agent. Case study coming soon.',
-    tech: ['Spring AI'],
-    image: null,
-    github: null,
-    live: null,
-    category: ['AI', 'Full-Stack'],
-    featured: false,
-    caseStudy: {
-      overview: 'Full case study coming soon.',
-    }
-  },
 ];
 
 export const site = {
   name: 'Aqsa Khan',
-  title: 'Full Stack Developer | Automation & AI Integration Expert',
+  title: 'Full-Stack & AI Engineer',
   bio: `Hi, I'm Aqsa Khan, a passionate full-stack developer and automation enthusiast dedicated to creating elegant, high-performing digital solutions. I blend modern web development with intelligent automation to help businesses and individuals save time, streamline workflows, and achieve their goals.
 
-With hands-on experience in React, Node.js, MySQL, Python automation, and AI integration, I craft websites, apps, and tools that are not only functional but also visually engaging. My approach is grounded in clean code, responsive design, and seamless user experiences, ensuring every project I deliver is professional, efficient, and impactful.
+With hands-on experience in Java (Spring Boot, Spring AI), Python (FastAPI, Django), React, PostgreSQL and multi-agent AI systems built with LangGraph, RAG and MCP, I craft websites, apps, and tools that are not only functional but also visually engaging. My approach is grounded in clean code, responsive design, and seamless user experiences, ensuring every project I deliver is professional, efficient, and impactful.
 
 When I'm not coding, I love exploring innovative tech solutions, experimenting with AI-powered tools, and continuously learning to stay ahead in the ever-evolving digital world.
 
 Let's build something amazing together!`,
   skills,
   categorizedSkills,
+  detailedSkills,
   services,
   projects,
   certificates: [
@@ -619,7 +757,7 @@ Let's build something amazing together!`,
   ],
   social: {
     github: 'https://github.com/aqsak-dev99',
-    linkedin: 'https://www.linkedin.com/in/aqsa-khan-8044763a3/',
+    linkedin: 'https://www.linkedin.com/in/aqsa-khan-dev/',
     email: 'aqsa.dev99@gmail.com',
   },
 };

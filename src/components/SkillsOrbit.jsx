@@ -130,7 +130,7 @@ export default function SkillsOrbit({ skills, reducedMotion }) {
             ref={(el) => { cardRefs.current[i] = el; }}
             tabIndex={0}
             onFocus={() => focusCard(i)}
-            aria-label={`${skill.name} — ${skill.level}`}
+            aria-label={skill.name}
           >
             <span className="orbital__skill-icon" aria-hidden="true">{skill.icon}</span>
             <span className="orbital__skill-name">{skill.name}</span>
