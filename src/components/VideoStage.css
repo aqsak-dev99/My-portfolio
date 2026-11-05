@@ -17,7 +17,9 @@
   border-radius: 2%;
   box-shadow: 0 0 120px rgba(242, 193, 78, 0.08);
   will-change: transform, border-radius, filter, opacity;
-  transform: translate(-50%, -50%);
+  /* Centring is done only by GSAP (xPercent/yPercent -50 in videoDirector's
+     scene()). A CSS translate here as well would be read by GSAP as a pixel
+     offset and added on top, pushing the video up and to the left. */
 }
 
 .video-el {

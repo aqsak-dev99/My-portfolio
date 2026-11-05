@@ -73,6 +73,8 @@ export function getVignetteEl() {
 // -50/-50 is the centered baseline). Scenes describe an offset from center
 // in percent-of-own-size, so call sites stay readable:
 //   scene({ xOffset: 18, scale: 0.6, borderRadius: '50%', ... })
+// x/y are pinned to 0 so no stray pixel offset can ever add to the
+// percentage-based centring.
 export function scene({ xOffset = 0, yOffset = 0, ...rest }) {
-  return { xPercent: -50 + xOffset, yPercent: -50 + yOffset, ...rest };
+  return { x: 0, y: 0, xPercent: -50 + xOffset, yPercent: -50 + yOffset, ...rest };
 }
