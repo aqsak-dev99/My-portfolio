@@ -12,28 +12,42 @@ export const skills = [
 export const categorizedSkills = {
   frontend: [
     { name: 'React.js', level: 'Advanced', icon: '⚛️' },
-    { name: 'HTML', level: 'Advanced', icon: '🌐' },
-    { name: 'CSS', level: 'Advanced', icon: '🎨' },
+    { name: 'JavaScript/ES6+', level: 'Advanced', icon: '📜' },
+    { name: 'HTML5', level: 'Advanced', icon: '🌐' },
+    { name: 'CSS3 / Tailwind', level: 'Advanced', icon: '🎨' },
+    { name: 'Responsive Design', level: 'Advanced', icon: '📱' },
   ],
   backend: [
     { name: 'Java / Spring Boot', level: 'Intermediate', icon: '☕' },
     { name: 'FastAPI', level: 'Intermediate', icon: '⚡' },
     { name: 'Django', level: 'Intermediate', icon: '🐍' },
     { name: 'Node.js', level: 'Advanced', icon: '🟢' },
+    { name: 'Express.js', level: 'Advanced', icon: '🚀' },
     { name: 'PostgreSQL / pgvector', level: 'Intermediate', icon: '🐘' },
+    { name: 'Redis', level: 'Intermediate', icon: '🧱' },
+    { name: 'MySQL', level: 'Intermediate', icon: '🗄️' },
+    { name: 'MongoDB', level: 'Intermediate', icon: '🍃' },
     { name: 'RESTful APIs / Swagger', level: 'Advanced', icon: '🔗' },
   ],
   aiAutomation: [
     { name: 'Spring AI Tool-Calling', level: 'Intermediate', icon: '🤖' },
     { name: 'LangGraph Multi-Agent', level: 'Intermediate', icon: '🕸️' },
     { name: 'RAG', level: 'Intermediate', icon: '📚' },
+    { name: 'MCP Tools', level: 'Intermediate', icon: '🔌' },
+    { name: 'LLM Evaluation', level: 'Intermediate', icon: '🧪' },
+    { name: 'n8n Automation', level: 'Intermediate', icon: '🔁' },
+    { name: 'Python Automation', level: 'Advanced', icon: '🐍' },
   ],
   uiux: [
     { name: 'Figma', level: 'Intermediate', icon: '🎯' },
+    { name: 'UI/UX Implementation', level: 'Advanced', icon: '✨' },
+    { name: 'Design Systems', level: 'Intermediate', icon: '📐' },
   ],
   tools: [
     { name: 'Git / GitHub', level: 'Advanced', icon: '🔧' },
+    { name: 'Docker', level: 'Intermediate', icon: '🐳' },
     { name: 'CI/CD', level: 'Intermediate', icon: '✅' },
+    { name: 'Vercel / Render', level: 'Advanced', icon: '☁️' },
   ]
 };
 
@@ -58,54 +72,6 @@ export const services = [
   },
 ];
 
-export const detailedSkills = {
-  backend: [
-    'Spring Boot (MyFitness)',
-    'FastAPI (AutoHub)',
-    'Django (LeaseFlow)',
-    'Node.js and Express (Diana’s Jewelry)',
-    'Serverless API functions on Vercel (flowpath contact form, admin, assistant)',
-    'REST API design, documented with Swagger/OpenAPI (MyFitness)',
-    'Login with sessions, spam honeypot and rate limiting (flowpath)',
-  ],
-  aiAutomation: [
-    'Spring AI with tool-calling agents (MyFitness)',
-    'LangGraph supervisor-worker multi-agent system with a verifier agent (LeaseFlow)',
-    'RAG with pgvector (MyFitness, LeaseFlow)',
-    'MCP tools (LeaseFlow)',
-    'LLM evaluation (MyFitness harness, LeaseFlow suite, flowpath’s 29/29 set)',
-    'Red-team testing, plus cost and token tracking (LeaseFlow)',
-    'Multilingual AI with human-in-the-loop handover (AutoHub)',
-    'Grounded answers from live data (Diana’s assistant reads the product catalogue)',
-    'Working with several LLM providers: OpenAI, Gemini and Groq, including switching providers, fallback models, retries and timeouts (Diana’s Jewelry)',
-    'n8n workflow automation (AutoHub)',
-  ],
-  databases: [
-    'PostgreSQL with pgvector, hosted on Neon (MyFitness, flowpath)',
-    'MySQL, hosted on Aiven with SSL (Diana’s Jewelry)',
-    'Redis (AutoHub)',
-    'Migrating a database and restoring from a SQL dump (Diana’s Jewelry)',
-  ],
-  devOps: [
-    'Git and GitHub, including resolving pull and push problems',
-    'CI/CD (MyFitness), GitHub Actions (Email Generator)',
-    'Docker (Email Generator)',
-    'Render, Vercel, Railway, Aiven and Neon',
-    'Environment variables and secrets management',
-    'GitHub Codespaces (AutoHub)',
-    'Debugging live deployments using server logs',
-  ],
-  design: [
-    'Figma: wireframes, prototypes and design systems (ClassLink, design system prototype)',
-    'User personas, task flows and usability heuristics (ClassLink)',
-    'Landing pages and brand sites (Gulmohar, MicroVisuals, PixelPulse, flowpath)',
-  ],
-  dataAutomation: [
-    'Pandas (CSV Cleaner)',
-    'Python and Node automation scripts (File Organizer, Email Generator)',
-  ],
-};
-
 export const projects = [
   // --- Featured: the three flagship full-stack + AI projects (match the CV) ---
   {
@@ -113,13 +79,13 @@ export const projects = [
     title: 'AutoHub – AI Receptionist & Lead Automation Hub',
     description: 'An AI receptionist for a digital marketing agency that answers leads in English, Roman Urdu, Urdu and Arabic, logs how every lead was handled, and hands over to a human when unsure.',
     tech: ['FastAPI', 'PostgreSQL', 'Redis', 'n8n', 'React'],
-    image: '/images/Screenshot 2026-11-05 at 12.18.22 PM.png',
+    image: null,
     github: null,
-    live: null,
+    live: 'https://autohub-0igb.onrender.com',
     category: ['AI', 'Full-Stack'],
     featured: true,
     meta: {
-      role: 'Full-Stack & AI Engineer',
+      role: 'Full-Stack & AI Developer',
       type: 'AI Automation Platform'
     },
     caseStudy: {
@@ -141,14 +107,7 @@ export const projects = [
         ],
       },
       techStack: ['FastAPI', 'Python', 'PostgreSQL', 'Redis', 'n8n', 'React', 'GitHub Codespaces'],
-      screenshots: [
-        '/images/Screenshot 2026-11-05 at 12.18.02 PM.png',
-        '/images/Screenshot 2026-11-05 at 12.18.11 PM.png',
-        '/images/Screenshot 2026-11-05 at 12.18.22 PM.png',
-        '/images/Screenshot 2026-11-05 at 12.18.34 PM.png',
-        '/images/Screenshot 2026-11-05 at 12.18.39 PM.png',
-        '/images/Screenshot 2026-11-05 at 12.19.12 PM.png'
-      ]
+      screenshots: []
     }
   },
   {
@@ -156,13 +115,13 @@ export const projects = [
     title: 'MyFitness – Gym Management System with Spring AI Agent',
     description: 'A full-stack gym management system with a tool-calling AI agent built on Spring AI, grounded with RAG over PostgreSQL + pgvector, and deployed live with demo accounts.',
     tech: ['Java', 'Spring Boot', 'Spring AI', 'PostgreSQL', 'pgvector', 'React'],
-    image: '/images/myfitness2.png',
+    image: null,
     github: null,
     live: 'https://myfitness-frontend.onrender.com',
     category: ['AI', 'Full-Stack'],
     featured: true,
     meta: {
-      role: 'Full-Stack & AI Engineer',
+      role: 'Full-Stack & AI Developer',
       type: 'Full-Stack Web App + AI Agent'
     },
     caseStudy: {
@@ -186,13 +145,7 @@ export const projects = [
         ],
       },
       techStack: ['Java', 'Spring Boot', 'Spring AI', 'PostgreSQL', 'pgvector', 'Neon', 'React', 'Swagger/OpenAPI', 'CI/CD', 'Render'],
-      screenshots: [
-        '/images/myfitness1.png',
-        '/images/myfitness2.png',
-        '/images/myfitness3.png',
-        '/images/myfitness4.png',
-        '/images/myfitness5.png'
-      ]
+      screenshots: []
     }
   },
   {
@@ -200,13 +153,13 @@ export const projects = [
     title: 'LeaseFlow – Multi-Agent Rental Management System',
     description: 'A LangGraph supervisor-worker system where specialist agents handle leases, maintenance and payments, with a verifier agent, RAG, MCP tools, cost tracking and red-team testing.',
     tech: ['Python', 'Django', 'LangGraph', 'RAG', 'MCP'],
-    image: '/images/lf4.png',
+    image: null,
     github: 'https://github.com/aqsak-dev99/leaseflow',
     live: null,
     category: ['AI', 'Full-Stack'],
     featured: true,
     meta: {
-      role: 'AI Engineer',
+      role: 'AI Developer',
       type: 'Multi-Agent LLM System'
     },
     caseStudy: {
@@ -229,13 +182,7 @@ export const projects = [
         ],
       },
       techStack: ['Python', 'Django', 'LangGraph', 'RAG', 'MCP', 'LLM Evaluation'],
-      screenshots: [
-        '/images/lf3.png',
-        '/images/lf4.png',
-        '/images/lf5.jpg',
-        '/images/lf7.jpg',
-        '/images/lf9.jpg'
-      ]
+      screenshots: []
     }
   },
 
@@ -356,7 +303,7 @@ export const projects = [
     image: '/images/ai-todo.png',
     github: 'https://github.com/aqsak-dev99/Ai-to-do-app',
     live: 'https://aqsak-dev99.github.io/Ai-to-do-app/',
-    category: ['AI'],
+    category: ['Full-Stack', 'AI'],
     featured: true,
     caseStudy: {
       overview: 'AI Todo is a modern task management application that combines intelligent AI assistance with intuitive UI/UX and gamification elements. Built with React + Vite, it features two operational modes: Demo Mode (no API key required with rule-based suggestions) and Live AI Mode (powered by OpenAI for contextual task recommendations).',
@@ -461,7 +408,7 @@ export const projects = [
     image: '/images/pixelpulse-media.png',
     github: 'https://github.com/aqsak-dev99/pixel_media',
     live: 'https://aqsak-dev99.github.io/pixel_media/',
-    category: ['UI/UX'],
+    category: ['Full-Stack', 'UI/UX'],
     featured: true,
     caseStudy: {
       overview: 'A visually stunning digital agency website with modern glassmorphism design.',
@@ -492,7 +439,7 @@ export const projects = [
     image: '/images/wanderlust-journeys.png',
     github: 'https://github.com/aqsak-dev99/aqsa-web-design',
     live: 'https://aqsak-dev99.github.io/aqsa-web-design/',
-    category: ['UI/UX'],
+    category: ['Full-Stack'],
     featured: false,
     caseStudy: {
       overview: 'A beautiful travel landing page showcasing destinations and inspiring wanderlust.',
@@ -512,6 +459,77 @@ export const projects = [
       ],
       learnings: 'Gained expertise in Bootstrap 5 and responsive design patterns.',
       screenshots: []
+    }
+  },
+  {
+    id: '5',
+    title: 'AI Designing & Automation Suite',
+    description: 'AI-powered design tools and automation workflows for creative professionals.',
+    tech: ['React', 'Node.js', 'Python', 'AI/ML', 'Automation'],
+    image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=AI%20design%20studio%20interface%20dashboard&image_size=landscape_16_9',
+    github: 'https://github.com/aqsak-dev99',
+    live: null,
+    category: ['AI', 'Full-Stack'],
+    featured: true,
+    caseStudy: {
+      overview: 'A comprehensive suite of AI-powered design tools and automation scripts.',
+      problem: 'Creative professionals spend too much time on repetitive tasks.',
+      solution: 'Built AI design tools and automation workflows to streamline creative processes.',
+      techStack: ['React', 'Node.js', 'Python', 'AI/ML'],
+      keyFeatures: [
+        'AI-powered design suggestions',
+        'Automated workflow management',
+        'AI Todo app integration',
+        'Batch processing capabilities',
+        'Intuitive, modern interfaces'
+      ],
+      challenges: [
+        'Integrating AI models with web applications',
+        'Creating reliable automation workflows',
+        'Ensuring smooth user experience with AI features'
+      ],
+      learnings: 'Deepened knowledge of AI integration, automation patterns, and modern UI/UX.',
+      screenshots: [
+        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=AI%20design%20tool%20interface&image_size=landscape_16_9',
+        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=automation%20workflow%20dashboard%20UI&image_size=landscape_16_9',
+        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=AI%20todo%20app%20interface&image_size=landscape_16_9'
+      ]
+    }
+  },
+  {
+    id: '6',
+    title: 'UI/UX Design System – Figma Prototype',
+    description: 'Comprehensive UI/UX design system and prototype built in Figma.',
+    tech: ['Figma', 'UI/UX Design', 'Design Systems', 'Prototyping'],
+    image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Figma%20design%20system%20UI%20components&image_size=landscape_16_9',
+    github: null,
+    live: 'https://www.figma.com/proto/Wfm9AIz9A3JNOEPVgm0iyH/Untitled?node-id=92-331&p=f&t=QMRlVCzUel8QQXyK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=92%3A331',
+    figma: 'https://www.figma.com/proto/Wfm9AIz9A3JNOEPVgm0iyH/Untitled?node-id=92-331&p=f&t=QMRlVCzUel8QQXyK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=92%3A331',
+    category: ['UI/UX'],
+    featured: true,
+    caseStudy: {
+      overview: 'A complete UI/UX design system with reusable components and interactive prototypes.',
+      problem: 'Need for consistent, scalable design components across multiple projects.',
+      solution: 'Created a comprehensive Figma design system with wireframes, high-fidelity designs, and user flows.',
+      techStack: ['Figma', 'Design Systems', 'Prototyping', 'User Research'],
+      keyFeatures: [
+        'Reusable component library',
+        'Wireframes and low-fidelity designs',
+        'High-fidelity interactive prototypes',
+        'Complete user flow documentation',
+        'Design tokens and style guide'
+      ],
+      challenges: [
+        'Creating scalable, reusable components',
+        'Ensuring consistency across all design elements',
+        'Documenting the design system thoroughly'
+      ],
+      learnings: 'Mastered Figma, design systems, and the complete UI/UX process from research to prototyping.',
+      screenshots: [
+        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Figma%20wireframe%20design%20mobile%20app&image_size=landscape_16_9',
+        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=high%20fidelity%20UI%20design%20dashboard&image_size=landscape_16_9',
+        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=user%20flow%20diagram%20UX%20design&image_size=landscape_16_9'
+      ]
     }
   },
   {
@@ -601,17 +619,17 @@ export const projects = [
     id: '7',
     title: 'Product Survey Form',
     description: 'Responsive, interactive survey form with validation, counters, and glassmorphism.',
-    tech: ['HTML', 'CSS'],
+    tech: ['HTML5', 'CSS3', 'JavaScript'],
     image: '/images/product-survey-form.png',
     github: 'https://github.com/aqsak-dev99/ProductSurvey',
     live: 'https://aqsak-dev99.github.io/ProductSurvey/',
-    category: ['UI/UX'],
+    category: ['Full-Stack', 'UI/UX'],
     featured: false,
     caseStudy: {
       overview: 'A beautiful, accessible survey form with modern design.',
       problem: 'Need for a professional, accessible survey form with great UX.',
       solution: 'Built a responsive form with real-time validation and glassmorphic design.',
-      techStack: ['HTML', 'CSS'],
+      techStack: ['HTML5', 'CSS3', 'JavaScript'],
       keyFeatures: [
         'Real-time validation and counters',
         'Keyboard accessibility',
@@ -636,7 +654,7 @@ export const projects = [
     image: '/images/3.jpg',
     github: 'https://github.com/aqsak-dev99/Csv-cleaner',
     live: 'https://github.com/aqsak-dev99/Csv-cleaner',
-    category: [],
+    category: ['Full-Stack'],
     featured: false,
     caseStudy: {
       overview: 'A Python script that automates CSV file cleaning and standardization.',
@@ -667,7 +685,7 @@ export const projects = [
     image: '/images/2.jpg',
     github: 'https://github.com/aqsak-dev99/file_organizer',
     live: 'https://github.com/aqsak-dev99/file_organizer',
-    category: [],
+    category: ['Full-Stack'],
     featured: false,
     caseStudy: {
       overview: 'A Node.js script that automatically organizes files into folders by type.',
@@ -697,7 +715,7 @@ export const projects = [
     image: '/images/1.jpg',
     github: 'https://github.com/aqsak-dev99/Email_generator',
     live: 'https://github.com/aqsak-dev99/Email_generator',
-    category: [],
+    category: ['Full-Stack'],
     featured: false,
     caseStudy: {
       overview: 'A tool that generates professional emails from templates.',
@@ -722,7 +740,7 @@ export const projects = [
 
 export const site = {
   name: 'Aqsa Khan',
-  title: 'Full-Stack & AI Engineer',
+  title: 'Full-Stack & AI Development',
   bio: `Hi, I'm Aqsa Khan, a passionate full-stack developer and automation enthusiast dedicated to creating elegant, high-performing digital solutions. I blend modern web development with intelligent automation to help businesses and individuals save time, streamline workflows, and achieve their goals.
 
 With hands-on experience in Java (Spring Boot, Spring AI), Python (FastAPI, Django), React, PostgreSQL and multi-agent AI systems built with LangGraph, RAG and MCP, I craft websites, apps, and tools that are not only functional but also visually engaging. My approach is grounded in clean code, responsive design, and seamless user experiences, ensuring every project I deliver is professional, efficient, and impactful.
@@ -732,7 +750,6 @@ When I'm not coding, I love exploring innovative tech solutions, experimenting w
 Let's build something amazing together!`,
   skills,
   categorizedSkills,
-  detailedSkills,
   services,
   projects,
   certificates: [
